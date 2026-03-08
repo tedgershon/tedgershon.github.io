@@ -43,5 +43,11 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# npm (project uses Yarn)
+package-lock.json
+
+# Temp cleanup (safe to delete after reboot)
+_locked_trash/
+
 # Contentlayer
 .contentlayer
