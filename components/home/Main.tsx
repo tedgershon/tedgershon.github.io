@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/ui/Card'
 import { Mail, Github, Linkedin, Resume } from '@/components/social-icons/icons'
+import profilePhoto from '../../public/static/images/profile2.jpg'
 
 const FEATURED_COUNT = 2
 
@@ -47,11 +48,12 @@ function HeroSection() {
     <div className="flex flex-col items-center pt-8 pb-10 md:flex-row md:pt-12 md:pb-16">
       <div className="border-primary-500 overflow-hidden rounded-full border-[4px] p-1.5">
         <Image
-          src="/static/images/profile.jpg"
+          src={profilePhoto}
           alt="Ted Gershon"
-          width={192}
-          height={192}
-          className="h-[160px] w-[160px] rounded-full object-cover"
+          width={512}
+          height={512}
+          className="h-[175px] w-[175px] rounded-full object-cover"
+          placeholder="blur"
           priority
         />
       </div>
