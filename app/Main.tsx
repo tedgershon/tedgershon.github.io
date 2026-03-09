@@ -1,91 +1,77 @@
 import Link from '@/components/Link'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
+import projectsData from '@/data/projectsData'
+import Card from '@/components/Card'
 
-const MAX_DISPLAY = 5
+const FEATURED_COUNT = 3
 
-export default function Home({ posts }) {
+export default function Home() {
+  const featured = projectsData.slice(0, FEATURED_COUNT)
+
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            Latest
+      {/* Hero */}
+      <div className="space-y-8 pt-8 pb-10 md:space-y-10 md:pt-12 md:pb-16">
+        <div className="space-y-4">
+          <h1 className="text-4xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-gray-100">
+            Ted Gershon
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+          <p className="text-xl leading-8 text-gray-600 md:text-2xl dark:text-gray-300">
+            Software Engineer · Carnegie Mellon University '27
+          </p>
+          <p className="max-w-2xl text-lg leading-7 text-gray-500 dark:text-gray-400">
+            Building data platforms, full-stack applications, and AI-powered tools. Incoming SWE
+            Intern at Microsoft Azure Data. Previously at Pennybacker, where I shipped production
+            code for teams managing $5.1B in assets.
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
-            return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
-                    <div className="space-y-5 xl:col-span-3">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
-                        </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
-                      </div>
-                      <div className="text-base leading-6 font-medium">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base leading-6 font-medium">
+
+        <div className="flex flex-wrap gap-4">
           <Link
-            href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="All posts"
+            href="/projects"
+            className="bg-primary-500 hover:bg-primary-600 rounded-md px-6 py-3 text-sm font-medium text-white shadow-sm transition"
           >
-            All Posts &rarr;
+            View Projects
+          </Link>
+          <Link
+            href="/experience"
+            className="rounded-md border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            View Experience
+          </Link>
+          <Link
+            href={siteMetadata.github}
+            className="rounded-md border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            GitHub
           </Link>
         </div>
-      )}
-      {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+      </div>
+
+      {/* Featured Projects */}
+      <div className="border-t border-gray-200 pt-10 dark:border-gray-700">
+        <div className="space-y-2 pb-8 md:space-y-5">
+          <h2 className="text-3xl leading-9 font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
+            Featured Work
+          </h2>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            Highlights from production, nonprofit, and competitive projects.
+          </p>
         </div>
-      )}
+        <div className="-m-4 flex flex-wrap">
+          {featured.map((project) => (
+            <Card key={project.title} project={project} />
+          ))}
+        </div>
+        <div className="mt-8 flex justify-end text-base leading-6 font-medium">
+          <Link
+            href="/projects"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          >
+            All Projects &rarr;
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
