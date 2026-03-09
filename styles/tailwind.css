@@ -179,3 +179,39 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+.hover-link {
+  display: inline;
+  position: relative;
+  text-decoration: none;
+  color: var(--color-primary-500);
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    width: 0;
+    bottom: -1px;
+    background-color: var(--color-primary-500);
+    height: 1.5px;
+    border: none;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &:is(:hover, :focus, :active)::after {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+:where(.dark, .dark *) .hover-link {
+  color: var(--color-primary-400);
+
+  &::after {
+    background-color: var(--color-primary-400);
+  }
+}

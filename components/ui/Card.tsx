@@ -11,11 +11,7 @@ function RichText({ text }: { text: string }) {
         const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
         if (match) {
           return (
-            <Link
-              key={i}
-              href={match[2]}
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
-            >
+            <Link key={i} href={match[2]} className="hover-link">
               {match[1]}
             </Link>
           )
@@ -116,7 +112,7 @@ const Card = ({ project }: CardProps) => {
             {github && (
               <Link
                 href={github}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                className="hover-link text-base leading-6 font-medium"
                 aria-label={`GitHub repo for ${title}`}
               >
                 GitHub &rarr;
@@ -125,7 +121,7 @@ const Card = ({ project }: CardProps) => {
             {href && (
               <Link
                 href={href}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                className="hover-link text-base leading-6 font-medium"
                 aria-label={`Live demo of ${title}`}
               >
                 Live Demo &rarr;
