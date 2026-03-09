@@ -3,6 +3,25 @@ import Link from './Link'
 import type { Project } from '@/data/projectsData'
 import { scopeLabels, scopeColors } from '@/data/projectsData'
 
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+        if (match) {
+          return (
+            <Link key={i} href={match[2]} className="hover-link">
+              {match[1]}
+            </Link>
+          )
+        }
+        return <span key={i}>{part}</span>
+      })}
+    </>
+  )
+}
+
 interface CardProps {
   project: Project
 }
@@ -57,7 +76,11 @@ const Card = ({ project }: CardProps) => {
             >
               {scopeLabels[scope]}
             </span>
-            {impact && <span className="text-xs text-gray-500 dark:text-gray-400">{impact}</span>}
+            {impact && (
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                <RichText text={impact} />
+              </span>
+            )}
           </div>
 
           <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
@@ -89,7 +112,7 @@ const Card = ({ project }: CardProps) => {
             {github && (
               <Link
                 href={github}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                className="hover-link text-base leading-6 font-medium"
                 aria-label={`GitHub repo for ${title}`}
               >
                 GitHub &rarr;
@@ -98,7 +121,7 @@ const Card = ({ project }: CardProps) => {
             {href && (
               <Link
                 href={href}
-                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                className="hover-link text-base leading-6 font-medium"
                 aria-label={`Live demo of ${title}`}
               >
                 Live Demo &rarr;

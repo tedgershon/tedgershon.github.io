@@ -15,7 +15,7 @@ export interface Project {
 export const scopeLabels: Record<ProjectScope, string> = {
   production: 'Production',
   nonprofit: 'Nonprofit',
-  hackathon: 'Hackathon Winner',
+  hackathon: 'Hackathon',
   'open-source': 'Open Source',
   academic: 'Academic',
 }
@@ -30,37 +30,36 @@ export const scopeColors: Record<ProjectScope, string> = {
 
 const projectsData: Project[] = [
   {
-    title: 'Pennybacker Investment Dashboards',
-    description:
-      'Built production data pipelines and investment dashboards used daily by 54 users across 4 teams managing $5.1B AUM. Refactored 14 Spark SQL models with dbt and dynamic Jinja templating, cutting compile time by 57–85%. Rebuilt GBDT training pipeline to centralize feature engineering across 3 asset classes.',
-    techStack: ['Python', 'Databricks', 'Spark SQL', 'dbt', 'MLflow', 'sklearn', 'CI/CD'],
-    scope: 'production',
-    impact: '5,300+ lines of production code · 54 daily users · $5.1B AUM',
+    title: 'Odyssey',
+    description: `Placed 2/278 teams for Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
+    techStack: ['Python', 'Django', 'TypeScript', 'Dedalus MCP', 'Google Maps API'],
+    scope: 'hackathon',
+    impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
+    github: 'https://github.com/thejonathangu/Odyssey',
   },
   {
-    title: 'PGH Donut Dash',
+    title: 'Donut Dash Website',
     description:
-      'Full-stack platform for a 501(c)(3) initiative that has raised $263,000+ since 2018, serving 12,000+ users. Re-architected Stripe integration for campaign-based payment workflows, migrated email automations, and managed Cloudflare deployment. Currently leading sprint-based migration to Next.js architecture.',
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'Next.js', 'Cloudflare'],
+      'Full-stack platform for a 501(c)(3) initiative that has raised $263,000+ since 2018, serving 12,000+ users. Currently leading sprint-based migration to Next.js architecture.',
+    techStack: ['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'Cloudflare'],
     scope: 'nonprofit',
-    impact: '$263K+ raised · 12K+ users · 501(c)(3)',
+    impact: 'January 2025 — Present',
   },
   {
     title: 'SafePlate',
-    description:
-      "Won 1st place out of 84 teams at CMU's NOVA Generative AI Hackathon. Engineered multi-agent orchestration system using GPT-4.1 and Claude Sonnet 4 with automated validation and retry logic for allergen-free recipe generation. Built full-stack Django app with 37-unit integration test suite covering LLM outputs and agent failure modes.",
-    techStack: ['Python', 'Django', 'Airia', 'OpenAI', 'Claude', 'Agentic AI'],
+    description: `Placed 1/84 teams for "Best Use of Airia". Built a full-stack Django app to ensure recipe safety through automated validation and retry logic for allergy and ingredient constraints.`,
+    techStack: ['Python', 'Django', 'Airia (Agentic AI)', 'OpenAI', 'Claude'],
     scope: 'hackathon',
-    impact: '1st place / 84 teams · NOVA GenAI Hackathon',
+    impact: 'November 2025, [NOVA AI Hackathon](https://nova.scottylabs.org/) @ Carnegie Mellon',
     github: 'https://github.com/tedgershon/SafePlate',
   },
   {
     title: 'NodeBB Open-Source Contributions',
     description:
-      'Contributed to the NodeBB open-source forum platform across 3 merged pull requests. Added user profile fields (university, location) and built a complete comment pinning system with PUT/DELETE API endpoints, route and controller validation, client UI logic, and persistent hash-based storage with integration tests.',
+      'Contributed to the NodeBB open-source forum platform across 3 merged pull requests, adding user profile fields and a complete comment pinning system via API endpoints.',
     techStack: ['TypeScript', 'Node.js', 'Redis', 'Express'],
     scope: 'open-source',
-    impact: '3 merged PRs · Profile fields & comment pinning',
+    impact: 'Septemper — December 2025',
     github: 'https://github.com/tedgershon/NodeBB',
   },
   {
