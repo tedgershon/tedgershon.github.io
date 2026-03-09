@@ -1,8 +1,8 @@
-import 'css/prism.css'
+import '@/styles/prism.css'
 import 'katex/dist/katex.css'
 
-import PageTitle from '@/components/PageTitle'
-import { components } from '@/components/MDXComponents'
+import PageTitle from '@/components/ui/PageTitle'
+import { components } from '@/components/mdx/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs, allAuthors } from 'contentlayer/generated'
@@ -39,15 +39,14 @@ export async function generateMetadata(props: {
   const publishedAt = new Date(post.date).toISOString()
   const modifiedAt = new Date(post.lastmod || post.date).toISOString()
   const authors = authorDetails.map((author) => author.name)
-  let imageList = [siteMetadata.socialBanner]
-  if (post.images) {
-    imageList = typeof post.images === 'string' ? [post.images] : post.images
-  }
-  const ogImages = imageList.map((img) => {
-    return {
-      url: img && img.includes('http') ? img : siteMetadata.siteUrl + img,
-    }
-  })
+  const imageList = post.images
+    ? typeof post.images === 'string'
+      ? [post.images]
+      : post.images
+    : []
+  const ogImages = imageList.map((img) => ({
+    url: img && img.includes('http') ? img : siteMetadata.siteUrl + img,
+  }))
 
   return {
     title: post.title,
@@ -61,14 +60,14 @@ export async function generateMetadata(props: {
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
       url: './',
-      images: ogImages,
+      ...(ogImages.length > 0 ? { images: ogImages } : {}),
       authors: authors.length > 0 ? authors : [siteMetadata.author],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.summary,
-      images: imageList,
+      ...(imageList.length > 0 ? { images: imageList } : {}),
     },
   }
 }

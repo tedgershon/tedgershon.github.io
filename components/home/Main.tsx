@@ -1,7 +1,7 @@
-import Link from '@/components/Link'
+import Link from '@/components/ui/Link'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
+import Card from '@/components/ui/Card'
 
 const FEATURED_COUNT = 3
 

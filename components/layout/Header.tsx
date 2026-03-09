@@ -1,10 +1,10 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from 'next/image'
-import Link from './Link'
+import Link from '@/components/ui/Link'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
+import ThemeSwitch from '@/components/ui/ThemeSwitch'
+import SearchButton from '@/components/ui/SearchButton'
 
 const Header = () => {
   let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'

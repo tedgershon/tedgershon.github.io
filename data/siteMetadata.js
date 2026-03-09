@@ -10,7 +10,6 @@ const siteMetadata = {
   siteUrl: 'https://tedgershon.com',
   siteRepo: 'https://github.com/tedgershon/portfolio-website',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.jpg`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'tgershon@cmu.edu',
   github: 'https://github.com/tedgershon',
   linkedin: 'https://www.linkedin.com/in/tedgershon',
