@@ -26,8 +26,8 @@ export default function AuthorLayout({ children, content }: Props) {
                 <Image
                   src={avatar}
                   alt="avatar"
-                  width={192}
-                  height={192}
+                  width={512}
+                  height={512}
                   className="h-full w-full object-cover"
                 />
               </div>
