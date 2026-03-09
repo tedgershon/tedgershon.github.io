@@ -3,13 +3,14 @@ import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/ui/Card'
 
-const FEATURED_COUNT = 3
+const FEATURED_COUNT = 2
 
 export default function Home() {
   const featured = projectsData.slice(0, FEATURED_COUNT)
 
   return (
     <>
+      <div id="home" className="absolute top-0" />
       {/* Hero */}
       <div className="space-y-8 pt-8 pb-10 md:space-y-10 md:pt-12 md:pb-16">
         <div className="space-y-4">

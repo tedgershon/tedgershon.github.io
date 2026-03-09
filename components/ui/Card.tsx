@@ -3,6 +3,29 @@ import Link from './Link'
 import type { Project } from '@/data/projectsData'
 import { scopeLabels, scopeColors } from '@/data/projectsData'
 
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+        if (match) {
+          return (
+            <Link
+              key={i}
+              href={match[2]}
+              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
+            >
+              {match[1]}
+            </Link>
+          )
+        }
+        return <span key={i}>{part}</span>
+      })}
+    </>
+  )
+}
+
 interface CardProps {
   project: Project
 }
@@ -57,7 +80,11 @@ const Card = ({ project }: CardProps) => {
             >
               {scopeLabels[scope]}
             </span>
-            {impact && <span className="text-xs text-gray-500 dark:text-gray-400">{impact}</span>}
+            {impact && (
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                <RichText text={impact} />
+              </span>
+            )}
           </div>
 
           <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
