@@ -67,7 +67,10 @@ function TimelineItem({ item }: { item: Experience }) {
 
         <ul className="mt-2 space-y-1.5">
           {item.description.map((bullet, i) => (
-            <li key={i} className="flex gap-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+            <li
+              key={i}
+              className="flex gap-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400"
+            >
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 dark:bg-gray-600" />
               {bullet}
             </li>

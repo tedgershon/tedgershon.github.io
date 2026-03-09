@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;600;700&family=Noto+Sans+Mono:wght@300;400;600;700&family=Roboto+Slab:wght@300;400;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 @plugin '@tailwindcss/typography';
@@ -7,8 +8,10 @@
 /* Core theme configuration */
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans: 'Red Hat Display', 'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-serif: 'Roboto Slab', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
   /* Colors */
   /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
