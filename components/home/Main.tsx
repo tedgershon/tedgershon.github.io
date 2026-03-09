@@ -17,13 +17,9 @@ export default function Home() {
             Ted Gershon
           </h1>
           <p className="text-xl leading-8 text-gray-600 md:text-2xl dark:text-gray-300">
-            Software Engineer · Carnegie Mellon University '27
+            Developer. Engineer. Data Enthusiast.
           </p>
-          <p className="max-w-2xl text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Building data platforms, full-stack applications, and AI-powered tools. Incoming SWE
-            Intern at Microsoft Azure Data. Previously at Pennybacker, where I shipped production
-            code for teams managing $5.1B in assets.
-          </p>
+          <p className="max-w-2xl text-lg leading-7 text-gray-500 dark:text-gray-400">LALAL</p>
         </div>
 
         <div className="flex flex-wrap gap-4">
