@@ -6,7 +6,7 @@ const siteMetadata = {
   description:
     'Software engineer at Carnegie Mellon University. Building data platforms, full-stack applications, and AI-powered tools.',
   language: 'en-us',
-  theme: 'system',
+  theme: 'light',
   siteUrl: 'https://tedgershon.com',
   siteRepo: 'https://github.com/tedgershon/portfolio-website',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,

@@ -13,8 +13,8 @@ const EXPERIENCE_COUNT = 4
 const homeDotClasses: Record<ExperienceStatus, string> = {
   upcoming: 'border-violet-400 bg-violet-50 dark:border-violet-400 dark:bg-violet-900/30',
   current:
-    'border-emerald-500 bg-white ring-[3px] ring-emerald-400/50 dark:bg-gray-950 dark:ring-emerald-400/40',
-  past: 'border-pink-400 bg-white dark:border-pink-400 dark:bg-gray-950',
+    'border-emerald-500 bg-gray-50 ring-[3px] ring-emerald-400/50 dark:bg-gray-950 dark:ring-emerald-400/40',
+  previous: 'border-pink-400 bg-gray-50 dark:border-pink-400 dark:bg-gray-950',
 }
 
 const socialLinks = [

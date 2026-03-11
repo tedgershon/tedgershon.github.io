@@ -1,4 +1,4 @@
-export type ExperienceStatus = 'upcoming' | 'current' | 'past'
+export type ExperienceStatus = 'upcoming' | 'current' | 'previous'
 
 export interface Experience {
   title: string
@@ -46,7 +46,7 @@ export const experiences: Experience[] = [
       'Refactored 14 Spark SQL models in Databricks using dbt with dynamic Jinja templating, cutting compile time by 57–85% and enabling property-level analysis for real estate and executive teams.',
       'Refactored GBDT training pipeline in Python (sklearn, MLflow) to centralize feature engineering across 3 asset classes and automate logging for 36 configurations.',
     ],
-    status: 'past',
+    status: 'previous',
   },
   {
     title: 'Technical Solutions Intern',
@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
       'Authored 33 technical guides on SSO authentication, ATS/HRIS integrations, and AI-powered job matching features to support platform adoption for 1.1M+ enterprise users.',
       'Restructured HubSpot knowledge base taxonomy and routing, reducing content navigation from 6–7 clicks to 3.',
     ],
-    status: 'past',
+    status: 'previous',
   },
 ]
 
@@ -83,7 +83,7 @@ export const leadership: Experience[] = [
     description: [
       'Supported 120+ students through lab debugging and grading, focusing on relational database modeling (ERDs), SQL querying, and front-end web development (HTML/CSS/JS) with deployment via GitHub Pages.',
     ],
-    status: 'past',
+    status: 'previous',
   },
   {
     title: 'Head of Logistics',
@@ -95,7 +95,7 @@ export const leadership: Experience[] = [
       "Coordinated Pittsburgh's largest hackathon, TartanHacks, with 750+ participants from over 18 countries.",
       "Led the first iteration of NOVA, CMU's first GenAI hackathon with 130+ participants and 29 submitted projects.",
     ],
-    status: 'past',
+    status: 'previous',
   },
 ]
 
