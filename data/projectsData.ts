@@ -94,6 +94,40 @@ const projectsData: Project[] = [
     impact: 'November 2023, [Hack112](https://www.cs.cmu.edu/~112/) @ Carnegie Mellon',
     github: 'https://github.com/tedgershon/ScottySurfers',
   },
+  {
+    title: 'C0VM',
+    description:
+      'Wrote a program in C to interpret C0 / C1 bytecode and run instructions in real time (similar to JVM), and extended C0VM by adding support for function pointers and void* pointers.',
+    techStack: ['C'],
+    scope: 'academic',
+    impact: 'April 2024',
+  },
+  {
+    title: 'Lights Out Solver',
+    description:
+      'Implemented backtracking, DFS, and DP to solve an arbitrary board for the game Lights Out, and a hashmap with a custom hashing function to solve by storing pre-checked paths.',
+    techStack: ['C'],
+    scope: 'academic',
+    impact: 'March 2024',
+  },
+  {
+    title: 'Complex Static Library',
+    description:
+      'Developed a static library which manages complex numbers, functions, and contains a makefile and driver program.',
+    techStack: ['C++', 'Git', 'Kanban', 'Scrum'],
+    scope: 'academic',
+    impact: 'January 2023',
+    github: 'https://github.com/vsangs10/Komplex-Kanaban-Project',
+  },
+  {
+    title: 'LASAlle',
+    description:
+      'Created an airport navigation tool which uses linked lists to route flights to and from Austin Bergstrom airport, optimizing connections, proximity to neighboring airports, and time data.',
+    techStack: ['C++'],
+    scope: 'academic',
+    impact: 'October 2022',
+    github: 'https://github.com/tedgershon/LASAlle',
+  },
 ]
 
 export default projectsData
