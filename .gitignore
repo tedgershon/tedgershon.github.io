@@ -51,3 +51,6 @@ _locked_trash/
 
 # Contentlayer
 .contentlayer
+
+# LLM Context Markers
+_progress/

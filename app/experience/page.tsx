@@ -9,8 +9,8 @@ import type { Experience, ExperienceStatus } from '@/data/experienceData'
 const dotClasses: Record<ExperienceStatus, string> = {
   upcoming: 'border-violet-400 bg-violet-50 dark:border-violet-400 dark:bg-violet-900/30',
   current:
-    'border-emerald-500 bg-white ring-[3px] ring-emerald-400/50 dark:bg-gray-950 dark:ring-emerald-400/40',
-  past: 'border-pink-400 bg-white dark:border-pink-400 dark:bg-gray-950',
+    'border-emerald-500 bg-gray-50 ring-[3px] ring-emerald-400/50 dark:bg-gray-950 dark:ring-emerald-400/40',
+  previous: 'border-pink-400 bg-gray-50 dark:border-pink-400 dark:bg-gray-950',
 }
 
 /* ── Flat timeline entry (pre-computed for rendering) ─────── */
@@ -22,7 +22,7 @@ type TimelineEntry = {
 }
 
 function buildTimeline(items: Experience[]): TimelineEntry[] {
-  const statusOrder: ExperienceStatus[] = ['upcoming', 'current', 'past']
+  const statusOrder: ExperienceStatus[] = ['upcoming', 'current', 'previous']
   const groups = statusOrder
     .map((s) => items.filter((e) => e.status === s))
     .filter((g) => g.length > 0)
@@ -42,7 +42,7 @@ function buildTimeline(items: Experience[]): TimelineEntry[] {
       entries.push({
         item,
         categoryLabel: isFirstInGroup
-          ? (['Upcoming', 'Current', 'Past'] as const)[statusOrder.indexOf(item.status)]
+          ? (['Upcoming', 'Current', 'Previous'] as const)[statusOrder.indexOf(item.status)]
           : undefined,
         lineBelow,
       })
