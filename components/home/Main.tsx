@@ -136,7 +136,7 @@ export default function Home() {
             Featured Work
           </h2>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Highlights from production, nonprofit, and competitive projects.
+            Highlights from production, hackathon, and course projects.
           </p>
         </div>
         <div className="-m-4 flex flex-wrap">
