@@ -31,7 +31,7 @@ export const scopeColors: Record<ProjectScope, string> = {
 const projectsData: Project[] = [
   {
     title: 'Odyssey',
-    description: `Placed 2/278 teams for Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
+    description: `Placed 2/278 teams for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
     techStack: ['Python', 'Django', 'TypeScript', 'Dedalus MCP', 'Google Maps API'],
     scope: 'hackathon',
     impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
