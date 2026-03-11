@@ -20,7 +20,14 @@ const Header = () => {
           alt="Logo"
           width={40}
           height={40}
-          className="rounded-sm"
+          className="rounded-sm dark:hidden"
+        />
+        <Image
+          src="/static/images/logo-dark.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          className="hidden rounded-sm dark:block"
         />
       </Link>
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">

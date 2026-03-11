@@ -23,7 +23,12 @@ const SearchButton = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            // magnifying glass:
+            // d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            // glass with puzzle:
+            // d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607z M7.5 7.5h2a1 1 0 0 0 2 0h2v2a1 1 0 0 0 0 2v2h-2a1 1 0 0 1-2 0h-2v-2a1 1 0 0 1 0-2v-2z"
+            // glass with question mark:
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607zM9 8c0-1.5 3-1.5 3 0s-1.5 1.5-1.5 3m0 2.5h.01"
           />
         </svg>
       </SearchButtonWrapper>
