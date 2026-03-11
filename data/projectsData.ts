@@ -6,6 +6,7 @@ export interface Project {
   techStack: string[]
   scope: ProjectScope
   impact?: string
+  website?: string
   href?: string
   github?: string
   imgSrc?: string
@@ -30,15 +31,8 @@ export const scopeColors: Record<ProjectScope, string> = {
 
 const projectsData: Project[] = [
   {
-    title: 'Odyssey',
-    description: `Placed 2/278 teams for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
-    techStack: ['Python', 'Django', 'TypeScript', 'Dedalus MCP', 'Google Maps API'],
-    scope: 'hackathon',
-    impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
-    github: 'https://github.com/thejonathangu/Odyssey',
-  },
-  {
     title: 'Donut Dash Website',
+    website: 'https://pghdonutdash.com/',
     description:
       'Full-stack platform for a 501(c)(3) initiative that has raised $263,000+ since 2018, serving 12,000+ users. Currently leading sprint-based migration to Next.js architecture.',
     techStack: ['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'Cloudflare'],
@@ -46,7 +40,17 @@ const projectsData: Project[] = [
     impact: 'January 2025 — Present',
   },
   {
+    title: 'Odyssey',
+    website: 'https://odyssey-wp6e.onrender.com/',
+    description: `Placed 2/278 teams for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
+    techStack: ['Python', 'Django', 'TypeScript', 'Dedalus MCP', 'Google Maps API'],
+    scope: 'hackathon',
+    impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
+    github: 'https://github.com/thejonathangu/Odyssey',
+  },
+  {
     title: 'SafePlate',
+    website: 'https://safeplate-6nfw.onrender.com/',
     description: `Placed 1/84 teams for "Best Use of Airia". Built a full-stack Django app to ensure recipe safety through automated validation and retry logic for allergy and ingredient constraints.`,
     techStack: ['Python', 'Django', 'Airia (Agentic AI)', 'OpenAI', 'Claude'],
     scope: 'hackathon',
@@ -55,35 +59,39 @@ const projectsData: Project[] = [
   },
   {
     title: 'NodeBB Open-Source Contributions',
+    website: 'https://nodebb.org/',
     description:
       'Contributed to the NodeBB open-source forum platform across 3 merged pull requests, adding user profile fields and a complete comment pinning system via API endpoints.',
     techStack: ['TypeScript', 'Node.js', 'Redis', 'Express'],
     scope: 'open-source',
     impact: 'Septemper — December 2025',
-    github: 'https://github.com/tedgershon/NodeBB',
+    github: 'https://github.com/CMU-313/nodebb-fall-2025-foundations',
   },
   {
-    title: 'KAYAK Database Model',
+    title: 'KAYAK DB',
     description:
-      'Designed and implemented a database modeled after KAYAK.com. Created user stories, designed conceptual, relational, and physical models, and implemented operations with Python, PostgreSQL, sample CSV data, and a command-line interface.',
-    techStack: ['Python', 'PostgreSQL', 'Database Design', 'SQL'],
+      "Modeled, designed, and implemented a 13-table PostgreSQL database replicating Kayak.com's schema, supporting user operations via Python CLI on CSV-sourced sample data.",
+    techStack: ['SQL', 'Python', 'PostgreSQL', 'Database Design'],
     scope: 'academic',
+    impact: 'November — December 2024',
     github: 'https://github.com/tedgershon/KAYAK-DB',
   },
   {
-    title: 'Roi du Pain (67-272)',
+    title: 'Roi du Pain Bakery Website',
     description:
-      "Full-stack web application for a start-up bakery venture built as the capstone project for CMU's Application Design & Development course. Implemented with Ruby on Rails following MVC architecture, test-driven development, and RESTful API design.",
+      'Engineered 4-role authorization system (CanCan) with granular permissions for customers, employees, and admins.  Built RESTful JSON APIs with Active Record serializers and validation for inventory, duplicates, and payment rules.',
     techStack: ['Ruby', 'Rails', 'HTML', 'CSS', 'Testing'],
     scope: 'academic',
-    github: 'https://github.com/tedgershon/272',
+    impact: 'February — April 2025',
+    github: 'https://github.com/tedgershon/Roi-du-Pain',
   },
   {
     title: 'Scotty Surfers',
     description:
-      'A CMU-themed take on Subway Surfers, built for the Hack112 hackathon using the CMU Graphics library. Features procedurally generated obstacles, sprite animation, and real-time collision detection.',
+      'A CMU-themed take on Subway Surfers, built using the CMU Graphics library. Features procedurally generated obstacles, sprite animation, and real-time collision detection.',
     techStack: ['Python', 'CMU Graphics'],
-    scope: 'academic',
+    scope: 'hackathon',
+    impact: 'November 2023, [Hack112](https://www.cs.cmu.edu/~112/) @ Carnegie Mellon',
     github: 'https://github.com/tedgershon/ScottySurfers',
   },
 ]

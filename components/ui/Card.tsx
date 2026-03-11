@@ -27,7 +27,8 @@ interface CardProps {
 }
 
 const Card = ({ project }: CardProps) => {
-  const { title, description, imgSrc, href, github, techStack, scope, impact, videoSrc } = project
+  const { title, description, imgSrc, href, github, techStack, scope, impact, videoSrc, website } =
+    project
   const primaryLink = href || github
 
   return (
@@ -84,9 +85,25 @@ const Card = ({ project }: CardProps) => {
           </div>
 
           <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
-            {primaryLink ? (
-              <Link href={primaryLink} aria-label={`Link to ${title}`}>
+            {website ? (
+              <Link
+                href={website}
+                aria-label={`Link to ${title}`}
+                className="hover-link !text-gray-900 after:!bg-gray-900 dark:!text-gray-100 dark:after:!bg-gray-100"
+              >
                 {title}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="ml-1 inline h-4 w-4 align-baseline"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
               </Link>
             ) : (
               title
