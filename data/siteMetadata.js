@@ -20,12 +20,6 @@ const siteMetadata = {
       umamiWebsiteId: process.env.NEXT_UMAMI_ID,
     },
   },
-  search: {
-    provider: 'kbar',
-    kbarConfig: {
-      searchDocumentsPath: `${process.env.BASE_PATH || ''}/search.json`,
-    },
-  },
 }
 
 module.exports = siteMetadata
