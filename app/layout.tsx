@@ -1,7 +1,6 @@
 import '@/styles/tailwind.css'
-import 'remark-github-blockquote-alert/alert.css'
 
-import { Analytics, AnalyticsConfig } from 'pliny/analytics'
+import Analytics from '@/components/Analytics'
 import Header from '@/components/layout/Header'
 import SectionContainer from '@/components/layout/SectionContainer'
 import Footer from '@/components/layout/Footer'
@@ -26,9 +25,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: './',
-    types: {
-      'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
-    },
   },
   robots: {
     index: true,
@@ -68,10 +64,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <link rel="manifest" href={`${basePath}/static/favicon/site.webmanifest`} />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <body className="bg-gray-50 pl-[calc(100vw-100%)] text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-50">
         <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+          <Analytics umamiWebsiteId={siteMetadata.analytics?.umamiAnalytics?.umamiWebsiteId} />
           <SectionContainer>
             <Header />
             <main className="mb-auto">{children}</main>
