@@ -75,7 +75,7 @@ export const leadership: Experience[] = [
     status: 'current',
   },
   {
-    title: 'Information Systems Teaching Assistant',
+    title: 'Teaching Assistant, IS Milieux (67-250)',
     company: 'Carnegie Mellon University',
     companyUrl: 'https://www.heinz.cmu.edu/',
     location: 'Pittsburgh, PA',

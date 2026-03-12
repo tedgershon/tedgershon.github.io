@@ -1,7 +1,7 @@
 import Image from './Image'
 import Link from './Link'
 import type { Project } from '@/data/projectsData'
-import { scopeLabels, scopeColors } from '@/data/projectsData'
+import { scopeLabels, scopeColors, categoryLabels, categoryColors } from '@/data/projectsData'
 
 function RichText({ text }: { text: string }) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
@@ -27,8 +27,19 @@ interface CardProps {
 }
 
 const Card = ({ project }: CardProps) => {
-  const { title, description, imgSrc, href, github, techStack, scope, impact, videoSrc, website } =
-    project
+  const {
+    title,
+    description,
+    imgSrc,
+    href,
+    github,
+    techStack,
+    scope,
+    category,
+    impact,
+    videoSrc,
+    website,
+  } = project
   const primaryLink = href || github
 
   return (
@@ -70,12 +81,17 @@ const Card = ({ project }: CardProps) => {
         )}
 
         <div className="p-6">
-          {/* Scope badge and impact */}
+          {/* Scope badge, category label, and impact */}
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span
               className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${scopeColors[scope]}`}
             >
               {scopeLabels[scope]}
+            </span>
+            <span
+              className={`inline-block rounded-md border px-2 py-0.5 text-xs font-semibold tracking-wide ${categoryColors[category]}`}
+            >
+              {categoryLabels[category]}
             </span>
             {impact && (
               <span className="text-xs text-gray-500 dark:text-gray-400">
