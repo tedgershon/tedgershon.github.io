@@ -1,7 +1,6 @@
-import rss from './rss.mjs'
-
 async function postbuild() {
-  await rss()
+  // No-op: blog/RSS functionality removed
+  console.log('Postbuild complete.')
 }
 
 postbuild()
