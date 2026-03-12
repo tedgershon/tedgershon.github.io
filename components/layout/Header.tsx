@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from '@/components/ui/Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from '@/components/ui/ThemeSwitch'
-import SearchButton from '@/components/ui/SearchButton'
+// import SearchButton from '@/components/ui/SearchButton'
 
 const Header = () => {
   let headerClass = 'flex items-center w-full bg-gray-50 dark:bg-gray-950 justify-between py-10'
@@ -44,7 +44,7 @@ const Header = () => {
               </Link>
             ))}
         </div>
-        <SearchButton />
+        {/* <SearchButton /> */}
         <ThemeSwitch />
         <MobileNav />
       </div>

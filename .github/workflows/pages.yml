@@ -42,6 +42,8 @@ jobs:
           EXPORT: 1
           UNOPTIMIZED: 1
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
