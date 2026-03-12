@@ -1,6 +1,5 @@
 import '@/styles/tailwind.css'
 
-import Analytics from '@/components/Analytics'
 import Header from '@/components/layout/Header'
 import SectionContainer from '@/components/layout/SectionContainer'
 import Footer from '@/components/layout/Footer'
@@ -66,7 +65,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <body className="bg-gray-50 pl-[calc(100vw-100%)] text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-50">
         <ThemeProviders>
-          <Analytics umamiWebsiteId={siteMetadata.analytics?.umamiAnalytics?.umamiWebsiteId} />
           <SectionContainer>
             <Header />
             <main className="mb-auto">{children}</main>

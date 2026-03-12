@@ -14,11 +14,6 @@ const siteMetadata = {
   linkedin: 'https://www.linkedin.com/in/tedgershon',
   locale: 'en-US',
   stickyNav: true,
-  analytics: {
-    umamiAnalytics: {
-      umamiWebsiteId: process.env.NEXT_UMAMI_ID,
-    },
-  },
 }
 
 module.exports = siteMetadata
