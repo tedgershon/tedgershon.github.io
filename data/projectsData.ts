@@ -83,8 +83,8 @@ const projectsData: Project[] = [
   {
     title: 'Odyssey',
     website: 'https://odyssey-wp6e.onrender.com/',
-    description: `Placed 2/278 teams for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track and index a story along its geographical and historical context.`,
-    techStack: ['Python', 'Django', 'TypeScript', 'Dedalus MCP', 'Google Maps API'],
+    description: `Placed Top 10 out of 278 teams and #2 for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track a story along its geographical and historical context.`,
+    techStack: ['Python', 'Django', 'React', 'OpenAI', 'MCP', 'Mapbox GL JS'],
     scope: 'hackathon',
     category: 'mcp',
     impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
@@ -132,16 +132,6 @@ const projectsData: Project[] = [
     github: 'https://github.com/tedgershon/Roi-du-Pain',
   },
   {
-    title: 'Scotty Surfers',
-    description:
-      'A CMU-themed take on Subway Surfers, built using the CMU Graphics library. Features procedurally generated obstacles, sprite animation, and real-time collision detection.',
-    techStack: ['Python', 'CMU Graphics'],
-    scope: 'hackathon',
-    category: 'game-dev',
-    impact: 'November 2023, [Hack112](https://www.cs.cmu.edu/~112/) @ Carnegie Mellon',
-    github: 'https://github.com/tedgershon/ScottySurfers',
-  },
-  {
     title: 'C0VM',
     description:
       'Wrote a program in C to interpret C0 / C1 bytecode and run instructions in real time (similar to JVM), and extended C0VM by adding support for function pointers and void* pointers.',
@@ -158,6 +148,16 @@ const projectsData: Project[] = [
     scope: 'academic',
     category: 'data-structures',
     impact: 'March 2024',
+  },
+  {
+    title: 'Scotty Surfers',
+    description:
+      'A CMU-themed take on Subway Surfers, built using the CMU Graphics library. Features procedurally generated obstacles, sprite animation, and real-time collision detection.',
+    techStack: ['Python', 'CMU Graphics'],
+    scope: 'hackathon',
+    category: 'game-dev',
+    impact: 'November 2023, [Hack112](https://www.cs.cmu.edu/~112/) @ Carnegie Mellon',
+    github: 'https://github.com/tedgershon/ScottySurfers',
   },
   {
     title: 'Complex Static Library',

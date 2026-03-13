@@ -93,7 +93,7 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
       <div className="min-w-0 flex-1 pb-8">
         {/* Mobile-only category label */}
         {categoryLabel && (
-          <span className="mb-1 block text-xs font-semibold tracking-widest text-gray-400 uppercase sm:hidden dark:text-gray-500">
+          <span className="mb-2 block text-xs font-semibold tracking-widest text-gray-400 uppercase sm:mb-1 sm:hidden dark:text-gray-500">
             {categoryLabel}
           </span>
         )}
@@ -101,7 +101,7 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
         {/* Company row */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-6 w-full cursor-pointer items-center gap-2 text-left"
+          className="flex w-full cursor-pointer items-start gap-2 text-left sm:h-6 sm:items-center"
           aria-expanded={isOpen}
         >
           <div className="flex flex-1 flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
