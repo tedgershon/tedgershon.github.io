@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     location: 'Redmond, WA',
     period: 'May 2026 — Aug 2026',
     description: [
-      'Incoming summer intern on the Power Query Online team within Azure Data (Cloud & AI).',
+      'Incoming summer intern on the Data Integration team within Azure Data (Cloud & AI).',
     ],
     status: 'upcoming',
   },
