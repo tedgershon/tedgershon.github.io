@@ -2,8 +2,7 @@ const siteMetadata = {
   title: 'Ted Gershon',
   author: 'Ted Gershon',
   headerTitle: 'Ted Gershon',
-  description:
-    'Software engineer at Carnegie Mellon University. Building data platforms, full-stack applications, and AI-powered tools.',
+  description: 'Senior at Carnegie Mellon University studying Information Systems, with minors in Software Engineering and Artificial Intelligence.',
   language: 'en-us',
   theme: 'light',
   siteUrl: 'https://tedgershon.github.io',

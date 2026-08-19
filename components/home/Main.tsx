@@ -120,19 +120,18 @@ function AboutSection() {
           <HoverLink href="https://lasa.austinschools.org/">Academy</HoverLink>. Currently, I&apos;m
           a student at <HoverLink href="https://www.cmu.edu/">Carnegie Mellon University</HoverLink>{' '}
           studying Information Systems with minors in Software Engineering and Artificial
-          Intelligence. Outside of tech, I play tennis for{' '}
+          Intelligence. I&apos;ve worked on production data pipelines, built full-stack web
+          applications, and integrated external systems through APIs for authentication, payments,
+          and cloud infrastructure. Outside of tech, I play tennis for{' '}
           <HoverLink href="https://www.instagram.com/tartantennis/">
             CMU&apos;s varsity team
           </HoverLink>
           .
         </p>
         <p>
-          I&apos;m fascinated by the future of big data and its endless applications—from deriving
-          healthcare insights to enabling smarter decision-making to optimizing tech,
-          transportation, public policy initiatives, and more. I believe future innovation hinges on
-          our ability to effectively manage data and derive meaningful insights to inform how we run
-          our most fundamental institutions. I&apos;m particularly interested in data infrastructure
-          as the backbone for large-scale frontier AI systems.
+          I&apos;m fascinated by how data and AI are reshaping our most fundamental institutions,
+          from healthcare to transportation to public policy. I&apos;m particularly interested in
+          the intersection of system integration, data, and customer-facing software.
         </p>
       </div>
     </div>

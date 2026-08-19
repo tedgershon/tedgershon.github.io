@@ -17,67 +17,31 @@ const dotClasses: Record<ExperienceStatus, string> = {
 
 type TimelineEntry = {
   item: Experience
-  categoryLabel?: string // shown left of the timeline, only on the first item of each group
-  lineBelow: 'solid' | 'dashed' | 'none' // solid=same group, dashed=transition, none=last
+  lineBelow: 'solid' | 'dashed' | 'none'
 }
 
 function buildTimeline(items: Experience[]): TimelineEntry[] {
-  const statusOrder: ExperienceStatus[] = ['upcoming', 'current', 'previous']
-  const groups = statusOrder
-    .map((s) => items.filter((e) => e.status === s))
-    .filter((g) => g.length > 0)
-
-  const entries: TimelineEntry[] = []
-
-  groups.forEach((group, gi) => {
-    group.forEach((item, ii) => {
-      const isFirstInGroup = ii === 0
-      const isLastInGroup = ii === group.length - 1
-      const isLastGroup = gi === groups.length - 1
-
-      let lineBelow: TimelineEntry['lineBelow'] = 'solid'
-      if (isLastInGroup && isLastGroup) lineBelow = 'none'
-      else if (isLastInGroup && !isLastGroup) lineBelow = 'dashed'
-
-      entries.push({
-        item,
-        categoryLabel: isFirstInGroup
-          ? (['Upcoming', 'Current', 'Previous'] as const)[statusOrder.indexOf(item.status)]
-          : undefined,
-        lineBelow,
-      })
-    })
-  })
-
-  return entries
+  return items.map((item, idx) => ({
+    item,
+    lineBelow: idx === items.length - 1 ? 'none' : 'solid',
+  }))
 }
 
 /* ── Single timeline row ──────────────────────────────────── */
 
 function TimelineRow({ entry }: { entry: TimelineEntry }) {
   const [isOpen, setIsOpen] = useState(false)
-  const { item, categoryLabel, lineBelow } = entry
+  const { item, lineBelow } = entry
 
   return (
     <div className="relative flex">
-      {/* ── Left column: category label ── */}
-      <div className="hidden w-20 shrink-0 text-right sm:flex sm:h-6 sm:items-center">
-        {categoryLabel && (
-          <span className="ml-auto text-xs font-semibold tracking-widest text-gray-400 uppercase dark:text-gray-500">
-            {categoryLabel}
-          </span>
-        )}
-      </div>
-
-      {/* ── Timeline spine (dot + line) ── */}
-      <div className="relative mx-4 flex w-3.5 shrink-0 flex-col items-center sm:mx-5">
-        {/* Spacer to vertically center the dot with the first text row */}
+      {/* ── Left column: timeline dot + line ── */}
+      <div className="relative flex w-20 shrink-0 flex-col items-center">
         <div className="flex h-6 items-center">
           <div
             className={`z-10 h-3.5 w-3.5 shrink-0 rounded-full border-2 ${dotClasses[item.status]}`}
           />
         </div>
-        {/* Line below dot */}
         {lineBelow !== 'none' && (
           <div
             className={`w-px flex-1 ${
@@ -91,13 +55,6 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
 
       {/* ── Right column: content ── */}
       <div className="min-w-0 flex-1 pb-8">
-        {/* Mobile-only category label */}
-        {categoryLabel && (
-          <span className="mb-2 block text-xs font-semibold tracking-widest text-gray-400 uppercase sm:mb-1 sm:hidden dark:text-gray-500">
-            {categoryLabel}
-          </span>
-        )}
-
         {/* Company row */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -161,7 +118,7 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
         </button>
 
         {/* Role title — always visible */}
-        <p className="mt-1 text-sm font-medium text-gray-600 dark:text-gray-300">{item.title}</p>
+        <p className="mt-0.5 text-sm font-medium text-gray-600 dark:text-gray-300">{item.title}</p>
 
         {/* Collapsible description */}
         <div
