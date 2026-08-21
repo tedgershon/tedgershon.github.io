@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import { experiences } from '@/data/experienceData'
+import { experiences, experienceSlug } from '@/data/experienceData'
 import type { ExperienceStatus } from '@/data/experienceData'
 import Card from '@/components/ui/Card'
 import { Mail, Github, Linkedin, Resume } from '@/components/social-icons/icons'
@@ -165,9 +165,7 @@ export default function Home() {
               {/* Card with colored dot + status label */}
               <div className="flex flex-col items-center">
                 <a
-                  href={exp.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/experience#${experienceSlug(exp)}`}
                   className="group hover:border-primary-500 dark:hover:border-primary-400 flex min-w-[170px] flex-col items-center rounded-xl border border-gray-200 px-5 py-4 transition hover:shadow-sm dark:border-gray-700"
                 >
                   <div
