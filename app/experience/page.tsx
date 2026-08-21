@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { experiences, leadership } from '@/data/experienceData'
+import { experiences, leadership, experienceSlug } from '@/data/experienceData'
 import type { Experience, ExperienceStatus } from '@/data/experienceData'
 
 /* ── Dot styling per status ───────────────────────────────── */
@@ -34,7 +34,7 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
   const { item, lineBelow } = entry
 
   return (
-    <div className="relative flex">
+    <div id={experienceSlug(item)} className="relative flex scroll-mt-36">
       {/* ── Left column: timeline dot + line ── */}
       <div className="relative flex w-20 shrink-0 flex-col items-center">
         <div className="flex h-6 items-center">
@@ -56,54 +56,18 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
       {/* ── Right column: content ── */}
       <div className="min-w-0 flex-1 pb-8">
         {/* Company row */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex w-full cursor-pointer items-start gap-2 text-left sm:h-6 sm:items-center"
-          aria-expanded={isOpen}
-        >
+        <div className="flex w-full items-start gap-2 sm:h-6 sm:items-center">
           <div className="flex flex-1 flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex items-center gap-2">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {item.company}
-              </h3>
-
-              {/* External link icon */}
+            <h3 className="text-lg font-semibold">
               <a
                 href={item.companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-primary-500 dark:hover:text-primary-400 text-gray-400 transition-colors dark:text-gray-500"
-                aria-label={`Visit ${item.company} website`}
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline underline-offset-2 transition-colors"
               >
-                <svg
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-4.5-6H21m0 0v7.5m0-7.5l-9 9"
-                  />
-                </svg>
+                {item.company}
               </a>
-
-              {/* Chevron */}
-              <svg
-                className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 dark:text-gray-500 ${
-                  isOpen ? 'rotate-180' : ''
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+            </h3>
 
             {/* Date + location stacked */}
             <div className="text-right">
@@ -115,12 +79,25 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
               </span>
             </div>
           </div>
-        </button>
+        </div>
 
         {/* Role title — always visible */}
         <p className="mt-0.5 text-sm font-medium text-gray-600 dark:text-gray-300">{item.title}</p>
 
-        {/* Collapsible description */}
+        {/* Summary + expandable bullets */}
+        <p className="mt-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          {item.summary}
+          {!isOpen && (
+            <button
+              onClick={() => setIsOpen(true)}
+              aria-expanded={isOpen}
+              aria-label={`Show details for ${item.company}`}
+              className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 cursor-pointer transition-colors"
+            >
+              <span className="text-gray-500 dark:text-gray-400">...</span> more
+            </button>
+          )}
+        </p>
         <div
           className={`overflow-hidden transition-all duration-300 ease-in-out ${
             isOpen ? 'mt-2 max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
@@ -137,6 +114,14 @@ function TimelineRow({ entry }: { entry: TimelineEntry }) {
               </li>
             ))}
           </ul>
+          <button
+            onClick={() => setIsOpen(false)}
+            aria-expanded={isOpen}
+            aria-label={`Hide details for ${item.company}`}
+            className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 mt-1.5 cursor-pointer text-sm transition-colors"
+          >
+            less
+          </button>
         </div>
       </div>
     </div>
