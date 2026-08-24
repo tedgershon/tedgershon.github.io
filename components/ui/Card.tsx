@@ -1,5 +1,7 @@
 import Image from './Image'
 import Link from './Link'
+import DemoVideoModal from './DemoVideoModal'
+import { Github, ExternalLink, Diagram } from '@/components/social-icons/icons'
 import type { Project } from '@/data/projectsData'
 import { scopeLabels, scopeColors, categoryLabels, categoryColors } from '@/data/projectsData'
 
@@ -39,6 +41,8 @@ const Card = ({ project }: CardProps) => {
     impact,
     videoSrc,
     website,
+    demoVideo,
+    designDiagram,
   } = project
   const primaryLink = href || github
 
@@ -51,18 +55,20 @@ const Card = ({ project }: CardProps) => {
               <Image
                 alt={title}
                 src={imgSrc}
-                className="object-cover object-center md:h-36 lg:h-48"
-                width={544}
-                height={306}
+                className="h-auto w-full object-cover object-center"
+                width={1411}
+                height={859}
+                unoptimized
               />
             </Link>
           ) : (
             <Image
               alt={title}
               src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
-              height={306}
+              className="h-auto w-full object-cover object-center"
+              width={1411}
+              height={859}
+              unoptimized
             />
           ))}
 
@@ -100,31 +106,7 @@ const Card = ({ project }: CardProps) => {
             )}
           </div>
 
-          <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
-            {website ? (
-              <Link
-                href={website}
-                aria-label={`Link to ${title}`}
-                className="hover-link !text-gray-900 after:!bg-gray-900 dark:!text-gray-100 dark:after:!bg-gray-100"
-              >
-                {title}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="ml-1 inline h-4 w-4 align-baseline"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Link>
-            ) : (
-              title
-            )}
-          </h2>
+          <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">{title}</h2>
 
           <p className="prose mb-4 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
 
@@ -140,27 +122,27 @@ const Card = ({ project }: CardProps) => {
             ))}
           </div>
 
-          {/* Links */}
-          <div className="flex gap-4">
-            {github && (
-              <Link
-                href={github}
-                className="hover-link text-base leading-6 font-medium"
-                aria-label={`GitHub repo for ${title}`}
-              >
-                GitHub &rarr;
-              </Link>
-            )}
-            {href && (
-              <Link
-                href={href}
-                className="hover-link text-base leading-6 font-medium"
-                aria-label={`Live demo of ${title}`}
-              >
-                Live Demo &rarr;
-              </Link>
-            )}
-          </div>
+          {/* Link favicons: GitHub, demo video, external site, design diagram */}
+          {(github || demoVideo || website || designDiagram) && (
+            <div className="flex items-center gap-3">
+              {github && (
+                <Link href={github} aria-label={`GitHub repository for ${title}`}>
+                  <Github className="hover:text-primary-500 dark:hover:text-primary-400 h-6 w-6 fill-current text-black dark:text-white" />
+                </Link>
+              )}
+              {demoVideo && <DemoVideoModal src={demoVideo} title={title} />}
+              {website && (
+                <Link href={website} aria-label={`External site for ${title}`}>
+                  <ExternalLink className="hover:text-primary-500 dark:hover:text-primary-400 h-5 w-5 fill-current text-black dark:text-white" />
+                </Link>
+              )}
+              {designDiagram && (
+                <Link href={designDiagram} aria-label={`Design diagram for ${title}`}>
+                  <Diagram className="hover:text-primary-500 dark:hover:text-primary-400 h-6 w-6 fill-current text-black dark:text-white" />
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -39,6 +39,7 @@ export default function AuthorLayout({ children, content }: Props) {
                   width={512}
                   height={512}
                   className="h-full w-full object-cover"
+                  unoptimized
                 />
               </div>
             )}

@@ -22,6 +22,8 @@ export interface Project {
   website?: string
   href?: string
   github?: string
+  demoVideo?: string
+  designDiagram?: string
   imgSrc?: string
   videoSrc?: string
 }
@@ -73,111 +75,99 @@ const projectsData: Project[] = [
   {
     title: 'Donut Dash Website',
     website: 'https://pghdonutdash.com/',
+    imgSrc: '/static/images/donut-dash-site.png',
+    designDiagram: '/static/images/donut-dash-design-diagram.png',
     description:
-      'Full-stack platform for a 501(c)(3) initiative that has raised $263,000+ since 2018, serving 12,000+ users. Currently leading sprint-based migration to Next.js architecture.',
-    techStack: ['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'Cloudflare'],
+      'Registration and donations platform for a charity race (700 racers, 12K+ annual site visits) which features a payment finalizer, admin dashboard for race-day check-in, and automated database backups to off-site storage',
+    techStack: ['Next.js', 'Cloudflare Workers', 'GCP', 'MongoDB', 'Stripe'],
     scope: 'nonprofit',
     category: 'full-stack',
-    impact: 'January 2025 — Present',
+    impact: 'January 2025 - Present',
+  },
+  {
+    title: 'PQ Connector Builder',
+    demoVideo: '/static/videos/pq-agent-skill-oauth-demo.mp4',
+    description:
+      'Agent skill for building Power Query (M) connectors from REST API sources in Microsoft Fabric. Guides auth setup, prefills connector code from stored templates, validates via the PQ SDK, and audits for hardcoded secrets and antipatterns',
+    techStack: ['Power Query SDK', 'M Language', 'TypeScript'],
+    scope: 'open-source',
+    category: 'agent-orchestration',
+    impact: 'July 2026',
+  },
+  {
+    title: 'BananaGains',
+    description:
+      'Campus prediction market with a transactional betting engine, dual-track community resolution voting, and real-time WebSocket infrastructure backed by Redis pub/sub',
+    techStack: ['PL/pgSQL', 'Redis', 'WebSockets', 'Node.js'],
+    scope: 'production',
+    category: 'full-stack',
+    impact: 'April - May 2026',
+    github: 'https://github.com/tedgershon/BananaGains',
   },
   {
     title: 'Odyssey',
     website: 'https://odyssey-wp6e.onrender.com/',
-    description: `Placed Top 10 out of 278 teams and #2 for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track a story along its geographical and historical context.`,
-    techStack: ['Python', 'Django', 'React', 'OpenAI', 'MCP', 'Mapbox GL JS'],
+    imgSrc: '/static/images/odyssey-site.png',
+    designDiagram: '/static/images/odyssey-design-diagram.png',
+    description: `Placed Top 10 out of 278 teams and #2 for the Creative Arts Track. Built a MCP-powered Literary Map with four subagents to track a story along its geographical and historical context`,
+    techStack: ['Django', 'React', 'MCP', 'OpenAI', 'Mapbox GL JS'],
     scope: 'hackathon',
     category: 'mcp',
     impact: 'February 2026, [TartanHacks](https://www.tartanhacks.com/) @ Carnegie Mellon',
     github: 'https://github.com/thejonathangu/Odyssey',
   },
   {
+    title: 'MSFT Accessibility Hub',
+    description:
+      'Unified suite of accessibility tools for people with disabilities. Connects Microsoft Scout to multimodal input sources and packages agentic OS extensions based on empirically-backed disability aids from CMU, UW, UMD, and GT labs',
+    techStack: ['Electron', 'TypeScript', 'Python', 'OpenCV', 'MCP'],
+    scope: 'hackathon',
+    category: 'agent-orchestration',
+    impact: 'June 2026, InternHacks @ Microsoft',
+    github: 'https://github.com/tedgershon/MSFT-AccessAbility-Hub',
+  },
+  {
     title: 'SafePlate',
     website: 'https://safeplate-6nfw.onrender.com/',
-    description: `Placed 1/84 teams for "Best Use of Airia". Built a full-stack Django app to ensure recipe safety through automated validation and retry logic for allergy and ingredient constraints.`,
-    techStack: ['Python', 'Django', 'Airia (Agentic AI)', 'OpenAI', 'Claude'],
+    imgSrc: '/static/images/safeplate-agent-design.png',
+    description: 'Placed 1/84 teams for "Best Use of Airia". Built a full-stack Django app to ensure recipe safety through automated validation and retry logic for allergy and ingredient constraints',
+    techStack: ['Django', 'Airia (Agentic AI)', 'OpenAI', 'Claude'],
     scope: 'hackathon',
     category: 'agent-orchestration',
     impact: 'November 2025, [NOVA AI Hackathon](https://nova.scottylabs.org/) @ Carnegie Mellon',
     github: 'https://github.com/tedgershon/SafePlate',
   },
   {
-    title: 'NodeBB Open-Source Contributions',
-    website: 'https://nodebb.org/',
-    description:
-      'Contributed to the NodeBB open-source forum platform across 3 merged pull requests, adding user profile fields and a complete comment pinning system via API endpoints.',
-    techStack: ['TypeScript', 'Node.js', 'Redis', 'Express'],
-    scope: 'open-source',
-    category: 'microservices',
-    impact: 'Septemper — December 2025',
-    github: 'https://github.com/CMU-313/nodebb-fall-2025-foundations',
-  },
-  {
-    title: 'KAYAK DB',
-    description:
-      "Modeled, designed, and implemented a 13-table PostgreSQL database replicating Kayak.com's schema, supporting user operations via Python CLI on CSV-sourced sample data.",
-    techStack: ['SQL', 'Python', 'PostgreSQL', 'Database Design'],
-    scope: 'academic',
-    category: 'database',
-    impact: 'November — December 2024',
-    github: 'https://github.com/tedgershon/KAYAK-DB',
-  },
-  {
     title: 'Roi du Pain Bakery Website',
     description:
-      'Engineered 4-role authorization system (CanCan) with granular permissions for customers, employees, and admins.  Built RESTful JSON APIs with Active Record serializers and validation for inventory, duplicates, and payment rules.',
-    techStack: ['Ruby', 'Rails', 'HTML', 'CSS', 'Testing'],
+      'Engineered 4-role authorization system (CanCan) with granular permissions for customers, employees, and admins. Built RESTful JSON APIs with Active Record serializers and validation for inventory, duplicates, and payment rules',
+    techStack: ['Ruby on Rails', 'React'],
     scope: 'academic',
     category: 'full-stack',
-    impact: 'February — April 2025',
+    impact: 'February - April 2025',
     github: 'https://github.com/tedgershon/Roi-du-Pain',
   },
+  // {
+  //   title: 'NodeBB Contributions',
+  //   website: 'https://nodebb.org/',
+  //   description:
+  //     'Contributed to a course-maintained fork of the NodeBB forum platform across 3 merged pull requests, adding user profile fields and a complete comment pinning system via API endpoints',
+  //   techStack: ['TypeScript', 'Node.js', 'Redis', 'Express'],
+  //   scope: 'open-source',
+  //   category: 'microservices',
+  //   impact: 'September - December 2025',
+  //   github: 'https://github.com/CMU-313/nodebb-fall-2025-foundations',
+  // },
   {
-    title: 'C0VM',
+    title: 'KAYAK DB',
+    imgSrc: '/static/images/kayak-db-schema.png',
     description:
-      'Wrote a program in C to interpret C0 / C1 bytecode and run instructions in real time (similar to JVM), and extended C0VM by adding support for function pointers and void* pointers.',
-    techStack: ['C'],
+      "Modeled, designed, and implemented a 13-table PostgreSQL database replicating Kayak.com's schema, supporting user operations via Python CLI on CSV-sourced sample data",
+    techStack: ['PostgreSQL', 'Python'],
     scope: 'academic',
-    category: 'systems',
-    impact: 'April 2024',
-  },
-  {
-    title: 'Lights Out Solver',
-    description:
-      'Implemented backtracking, DFS, and DP to solve an arbitrary board for the game Lights Out, and a hashmap with a custom hashing function to solve by storing pre-checked paths.',
-    techStack: ['C'],
-    scope: 'academic',
-    category: 'data-structures',
-    impact: 'March 2024',
-  },
-  {
-    title: 'Scotty Surfers',
-    description:
-      'A CMU-themed take on Subway Surfers, built using the CMU Graphics library. Features procedurally generated obstacles, sprite animation, and real-time collision detection.',
-    techStack: ['Python', 'CMU Graphics'],
-    scope: 'hackathon',
-    category: 'game-dev',
-    impact: 'November 2023, [Hack112](https://www.cs.cmu.edu/~112/) @ Carnegie Mellon',
-    github: 'https://github.com/tedgershon/ScottySurfers',
-  },
-  {
-    title: 'Complex Static Library',
-    description:
-      'Developed a static library which manages complex numbers, functions, and contains a makefile and driver program.',
-    techStack: ['C++', 'Git', 'Kanban', 'Scrum'],
-    scope: 'academic',
-    category: 'class-design',
-    impact: 'January 2023',
-    github: 'https://github.com/vsangs10/Komplex-Kanaban-Project',
-  },
-  {
-    title: 'LASAlle',
-    description:
-      'Created an airport navigation tool which uses linked lists to route flights to and from Austin Bergstrom airport, optimizing connections, proximity to neighboring airports, and time data.',
-    techStack: ['C++'],
-    scope: 'academic',
-    category: 'data-structures',
-    impact: 'October 2022',
-    github: 'https://github.com/tedgershon/LASAlle',
+    category: 'database',
+    impact: 'November - December 2024',
+    github: 'https://github.com/tedgershon/KAYAK-DB',
   },
 ]
 
