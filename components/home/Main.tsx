@@ -77,6 +77,7 @@ function HeroSection() {
           className="h-[175px] w-[175px] rounded-full object-cover"
           placeholder="blur"
           priority
+          unoptimized
         />
       </div>
       <div className="mt-6 text-center md:mt-0 md:ml-12 md:text-left">
