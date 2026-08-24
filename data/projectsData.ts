@@ -97,6 +97,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'BananaGains',
+    imgSrc: '/static/images/bananagains-site.png',
     description:
       'Campus prediction market with a transactional betting engine, dual-track community resolution voting, and real-time WebSocket infrastructure backed by Redis pub/sub',
     techStack: ['PL/pgSQL', 'Redis', 'WebSockets', 'Node.js'],
@@ -119,6 +120,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'MSFT Accessibility Hub',
+    imgSrc: '/static/images/accessability-hub-site.png',
     description:
       'Unified suite of accessibility tools for people with disabilities. Connects Microsoft Scout to multimodal input sources and packages agentic OS extensions based on empirically-backed disability aids from CMU, UW, UMD, and GT labs',
     techStack: ['Electron', 'TypeScript', 'Python', 'OpenCV', 'MCP'],
@@ -140,6 +142,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Roi du Pain Bakery Website',
+    imgSrc: '/static/images/roi-du-pain-site.png',
     description:
       'Engineered 4-role authorization system (CanCan) with granular permissions for customers, employees, and admins. Built RESTful JSON APIs with Active Record serializers and validation for inventory, duplicates, and payment rules',
     techStack: ['Ruby on Rails', 'React'],
