@@ -89,7 +89,7 @@ const projectsData: Project[] = [
     demoVideo: '/static/videos/pq-agent-skill-oauth-demo.mp4',
     imgSrc: '/static/images/pq-connector-builder-demo.png',
     description:
-      'Agent skill for building Power Query (M) connectors from REST API sources in Microsoft Fabric. Guides auth setup, prefills connector code from stored templates, validates via the PQ SDK, and audits for hardcoded secrets and antipatterns',
+      'Agent skill for building Power Query (M) connectors from REST API sources in Microsoft Fabric. Guides auth setup, prefills connector code from stored templates, validates via the PQ SDK, and audits for hardcoded secrets and anti-patterns',
     techStack: ['Power Query SDK', 'M Language', 'TypeScript'],
     scope: 'open-source',
     category: 'agent-orchestration',
